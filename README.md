@@ -5,7 +5,7 @@ Projeto acadêmico de Interação Humano-Computador (IHC), desenvolvido com HTML
 ## Integrantes
 
 - Joseph Cavalcante
-- Letícya Beatriz
+- Letícya Medeiros
 - Mariana Melo
 
 ## Quadro de objetivos
