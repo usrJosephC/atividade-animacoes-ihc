@@ -1,0 +1,140 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vitrine — uma interface que se comunica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Cabeçalho com a marca, o seletor de tema e o resumo da sacola. -->
+  <header>
+    <div class="brand">VITRINE<span style="color:#d7f36b">.</span></div>
+    <label class="theme-switch" for="themeToggle">
+      <span class="theme-icon" aria-hidden="true">☀</span>
+      <input id="themeToggle" type="checkbox" role="switch" aria-label="Ativar tema escuro">
+      <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
+      <span class="theme-label" id="themeLabel">Tema claro</span>
+      <span class="theme-icon" aria-hidden="true">☾</span>
+    </label>
+    <div class="cart-area">
+      <button class="cart" id="cart" type="button" aria-label="Abrir sacola, 0 produtos" aria-expanded="false" aria-controls="cartDropdown">
+        Sacola <span class="count" id="count">0</span>
+      </button>
+      <section class="cart-dropdown" id="cartDropdown" aria-labelledby="cartTitle" aria-hidden="true" inert>
+        <h2 id="cartTitle">Sua sacola</h2>
+        <p class="cart-empty" id="cartEmpty">Sua sacola está vazia.</p>
+        <ul class="cart-items" id="cartItems" aria-live="polite"></ul>
+        <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      </section>
+    </div>
+  </header>
+  <!-- Conteúdo principal da loja e demonstração das interações. -->
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">CASA · DESIGN · COTIDIANO</div>
+        <h1>Peças que fazem sentido.</h1>
+        <p>Uma seleção para deixar a rotina mais bonita. Adicione um produto e conclua a compra de demonstração.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">🪴</div>
+    </section>
+    <!-- Controles para comparar animações e reduzir movimentos. -->
+    <div class="toolbar"><strong>Acessibilidade e comparação</strong><label><input id="reduce" type="checkbox"> Reduzir movimentos</label><label for="speed">Duração do hover:</label><select id="speed">
+        <option value="180">Rápida · 180 ms</option>
+        <option value="400" selected>Suave · 400 ms</option>
+        <option value="900">Lenta · 900 ms</option>
+      </select><span id="speedText" class="sub" aria-live="polite">Duração atual: 400 ms</span></div>
+    <section>
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">ESCOLHAS DA SEMANA</div>
+          <h2>Favoritos da loja</h2>
+        </div><span class="sub">3 produtos</span>
+      </div>
+      <div class="products">
+        <article class="card">
+          <div class="photo" aria-hidden="true">🏺</div>
+          <h2>Vaso Aurora</h2>
+          <div class="sub">Cerâmica artesanal · areia</div>
+          <div class="price">R$ 89,90</div><button class="button add" data-product="Vaso Aurora">Adicionar à sacola</button>
+        </article>
+        <article class="card">
+          <div class="photo" aria-hidden="true">💡</div>
+          <h2>Luminária Brisa</h2>
+          <div class="sub">Luz quente · madeira clara</div>
+          <div class="price">R$ 219,00</div><button class="button add" data-product="Luminária Brisa">Adicionar à sacola</button>
+        </article>
+        <article class="card">
+          <div class="photo" aria-hidden="true">☕</div>
+          <h2>Caneca Orvalho</h2>
+          <div class="sub">Feita à mão · 320 ml</div>
+          <div class="price">R$ 64,50</div><button class="button add" data-product="Caneca Orvalho">Adicionar à sacola</button>
+        </article>
+      </div>
+      <p class="status" id="cartStatus" role="status" aria-live="polite">Sua sacola está vazia.</p>
+    </section>
+    <!-- Etapa de processamento e confirmação da compra fictícia. -->
+    <section class="checkout">
+      <div class="eyebrow">FINALIZAÇÃO DE DEMONSTRAÇÃO</div>
+      <h2>Pronto para concluir?</h2>
+      <p id="checkoutHint">Adicione ao menos um produto à sacola para continuar.</p><button class="button" id="buy" disabled>Confirmar compra</button>
+      <p class="status" id="buyStatus" role="status" aria-live="polite">Nenhuma compra iniciada.</p>
+    </section>
+    <p class="note">Demonstração acadêmica: produtos, preços e compra são fictícios; nenhum pagamento é realizado.</p>
+    <aside class="motion"><strong>Mapa das animações:</strong> o botão responde ao clique (ação recebida); o ícone giratório indica processamento (aguardar); a confirmação textual comunica sucesso. O cartão sobe no hover e o contador pulsa ao adicionar. Mensagens e ícones mantêm o sentido sem depender do movimento. O controle “Reduzir movimentos” remove animações e transições; a preferência de movimento reduzido do sistema é ativada inicialmente.</aside>
+    <!-- Quadro de registro da equipe e do teste com colegas. -->
+    <section class="record">
+      <h2>Registro da equipe e do teste</h2>
+      <p><strong>Integrantes:</strong> Joseph Cavalcante, Letícya Beatriz e Mariana Melo<br><strong>Tema:</strong> Loja virtual · adicionar produto e confirmar compra</p>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Animação / função</th>
+              <th>Benefício observado</th>
+              <th>Risco ou problema</th>
+              <th>Ajuste realizado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Resposta do botão ao clique: confirma que adicionar foi recebido.</td>
+              <td>Resposta imediata e item aparece na sacola.</td>
+              <td>Pulso pode distrair se repetido rapidamente.</td>
+              <td>Movimento curto; contador e texto de status permanecem.</td>
+            </tr>
+            <tr>
+              <td>Indicador giratório durante a compra: comunica espera.</td>
+              <td>Deixa claro que a operação está em andamento.</td>
+              <td>Espera sem prazo ou indicador textual pode gerar dúvida.</td>
+              <td>Mensagem “Processando...” junto do ícone; duração simulada curta.</td>
+            </tr>
+            <tr>
+              <td>Confirmação de compra: comunica resultado.</td>
+              <td>Confirma conclusão, total e mudança de estado.</td>
+              <td>Mensagem temporária pode desaparecer antes da leitura.</td>
+              <td>Resultado fica visível na área da compra; botão muda de estado.</td>
+            </tr>
+            <tr>
+              <td>Teste com outra equipe e melhoria</td>
+              <td class="fill">Preencher após observar o teste.</td>
+              <td class="fill">Registrar o problema percebido pelo colega.</td>
+              <td class="fill">Descrever a melhoria feita após o teste.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Roteiro do teste:</strong> peça a alguém para adicionar um produto e finalizar sem explicar onde clicar. Registre se percebeu a ação, entendeu a espera, identificou o resultado e conseguiu completar com movimentos reduzidos. A última linha da tabela deve refletir o teste real.</p>
+    </section>
+  </main>
+  <!-- Região que anuncia confirmações sem depender só do movimento. -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
+
+
