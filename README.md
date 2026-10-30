@@ -20,6 +20,9 @@ Projeto acadêmico de Interação Humano-Computador (IHC), desenvolvido com HTML
 | Reduzir movimentos | A opção “Reduzir movimentos” desativa animações e transições. A preferência do sistema operacional também é respeitada inicialmente. |
 | Manter a informação acessível | Mensagens textuais, rótulos acessíveis e regiões de status acompanham os efeitos visuais. |
 | Testar e melhorar | A tabela do registro inclui espaço para documentar o teste com outra equipe, o problema observado e o ajuste realizado. Preencham essa linha após o teste real. |
+| Consultar a sacola | O botão abre um dropdown animado com itens, quantidade por item, preço unitário, subtotal de cada item e valor total. |
+| Interagir com a sacola acessivelmente | O dropdown informa estado expandido/recolhido, fecha ao clicar fora ou pressionar Esc e pode ser usado por teclado. |
+| Alternar tema visual | Um switch permite alternar entre tema claro e escuro; a escolha fica salva no navegador e segue a preferência do sistema na primeira visita. |
 
 ## Como executar
 
@@ -38,8 +41,3 @@ Abra `index.html` em um navegador. Não é necessário instalar dependências ne
 - `script.js`: interações, mensagens, simulação de compra e controles de movimento.
 
 > Esta é uma demonstração acadêmica. Produtos, preços e compra são fictícios; nenhum pagamento é processado.
-
-| Consultar a sacola | O botão abre um dropdown animado com itens, quantidade por item, preço unitário, subtotal de cada item e valor total. |
-| Interagir com a sacola acessivelmente | O dropdown informa estado expandido/recolhido, fecha ao clicar fora ou pressionar Esc e pode ser usado por teclado. |
-
-| Alternar tema visual | Um switch permite alternar entre tema claro e escuro; a escolha fica salva no navegador e segue a preferência do sistema na primeira visita. |
